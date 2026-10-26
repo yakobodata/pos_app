@@ -189,24 +189,24 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 24),
 
                   // Demo credentials hint
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Column(
-                      children: [
-                        Text(
-                          'Demo accounts',
-                          style: TextStyle(fontWeight: FontWeight.w600),
-                        ),
-                        SizedBox(height: 6),
-                        Text('Cashier → username: cashier  /  password: 1234'),
-                        Text('Manager → username: manager  /  password: admin'),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   padding: const EdgeInsets.all(12),
+                  //   decoration: BoxDecoration(
+                  //     color: Colors.grey.shade100,
+                  //     borderRadius: BorderRadius.circular(10),
+                  //   ),
+                  //   child: const Column(
+                  //     children: [
+                  //       Text(
+                  //         'Demo accounts',
+                  //         style: TextStyle(fontWeight: FontWeight.w600),
+                  //       ),
+                  //       SizedBox(height: 6),
+                  //       Text('Cashier → username: cashier  /  password: 1234'),
+                  //       Text('Manager → username: manager  /  password: admin'),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),

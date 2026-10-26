@@ -336,6 +336,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:pos_app/screens/billing/bill_screen.dart';
 import 'package:provider/provider.dart';
 import '../../providers/menu_provider.dart';
 import '../../providers/order_provider.dart';
@@ -505,7 +506,11 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                           child: ElevatedButton(
                             onPressed: () {
                               // Navigate to BillScreen for payment method selection
-                              Navigator.pushNamed(context, '/bill');
+                              // Navigator.pushNamed(context, '/bill');
+                              Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) => const BillScreen()),
+                            );
                             },
                             child: const Text('Generate Bill'),
                           ),

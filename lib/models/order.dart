@@ -29,7 +29,7 @@ class Order {
     this.status = OrderStatus.pending,
     DateTime? createdAt,
     this.createdByUserId,
-    this.taxRate = 0.10,
+    this.taxRate = 0.0,
     this.tipAmount = 0.0,
   })  : id = id ?? const Uuid().v4(),
         items = items ?? [],

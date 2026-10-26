@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_app/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
@@ -257,6 +258,17 @@ class _InventoryScreenState extends State<InventoryScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Inventory'),
+        // Explicitly add the back button here
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const HomeScreen()), // Replace with your Home Screen widget class name
+            (route) => false, // Clears the back stack so pressing back won't return to the inventory
+          ); // Pops back to the previous screen
+          }
+        ),
         actions: [
           // ===== SCANNER BUTTON =====
           IconButton(
