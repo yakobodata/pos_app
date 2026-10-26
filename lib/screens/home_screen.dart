@@ -1,5 +1,7 @@
  
 import 'package:flutter/material.dart';
+import 'package:pos_app/screens/reports/analytics_screen.dart';
+import 'package:pos_app/screens/reports/reports_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/auth_provider.dart';
@@ -171,11 +173,23 @@ class HomeScreen extends StatelessWidget {
                         },
                       ),
                       _FeatureCard(
-                        title: 'Reports & Analytics',
+                        title: 'Reports',
                         icon: Icons.analytics,
                         color: Colors.redAccent,
                         onTap: () {
-                          // Navigator.push(context, MaterialPageRoute(builder: (_) => const ReportsScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const ReportsScreen()));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Reports screen coming soon')),
+                          );
+                        },
+                      ),
+                      _FeatureCard(
+                        title: 'Analytics',
+                        icon: Icons.analytics,
+                        color: Colors.redAccent,
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const AnalyticsScreen()));
+                          
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('Reports screen coming soon')),
                           );
