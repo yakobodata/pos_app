@@ -78,7 +78,7 @@ class _BillScreenState extends State<BillScreen> {
       );
     }
 
-    final currency = NumberFormat.currency(symbol: '\$');
+    final currency = NumberFormat.currency(symbol: '\UGX ', decimalDigits: 2 );
 
     return Scaffold(
       appBar: AppBar(
@@ -142,31 +142,31 @@ class _BillScreenState extends State<BillScreen> {
               children: [
                 // Subtotal
                 _buildRow('Subtotal', currency.format(order.subtotal)),
-                _buildRow('Tax (${(order.taxRate * 0).toStringAsFixed(0)}%)',
-                    currency.format(order.tax)),
+                // _buildRow('Tax (${(order.taxRate * 0).toStringAsFixed(0)}%)',
+                //     currency.format(order.tax)),
 
                 // Tip input
-                Row(
-                  children: [
-                    const Text('Tip', style: TextStyle(fontSize: 16)),
-                    const Spacer(),
-                    SizedBox(
-                      width: 100,
-                      child: TextField(
-                        controller: _tipController,
-                        keyboardType: TextInputType.number,
-                        textAlign: TextAlign.right,
-                        decoration: const InputDecoration(
-                          isDense: true,
-                          contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                          border: OutlineInputBorder(),
-                          prefixText: '\$ ',
-                        ),
-                        onChanged: (_) => _updateTip(order),
-                      ),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     const Text('Tip', style: TextStyle(fontSize: 16)),
+                //     const Spacer(),
+                //     SizedBox(
+                //       width: 100,
+                //       child: TextField(
+                //         controller: _tipController,
+                //         keyboardType: TextInputType.number,
+                //         textAlign: TextAlign.right,
+                //         decoration: const InputDecoration(
+                //           isDense: true,
+                //           contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                //           border: OutlineInputBorder(),
+                //           prefixText: '\$ ',
+                //         ),
+                //         onChanged: (_) => _updateTip(order),
+                //       ),
+                //     ),
+                //   ],
+                // ),
                 const SizedBox(height: 8),
                 const Divider(),
 
