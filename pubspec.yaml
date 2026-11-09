@@ -46,8 +46,10 @@ dependencies:
   path_provider: ^2.1.4
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  firebase_core: ^3.0.0
   cloud_firestore: ^5.0.0
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  flutter_launcher_icons: ^0.14.1
   
 
 dev_dependencies:
@@ -102,3 +104,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/vativa_logo_1.png"
+  # adaptive_icon_background: "#FFFFFF"   # background color for Android
+  adaptive_icon_foreground: "assets/icon/vativa_logo_1.png"

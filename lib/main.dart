@@ -1,29 +1,19 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
-
 import 'providers/auth_provider.dart';
 import 'providers/menu_provider.dart';
 import 'providers/order_provider.dart';
 // ... other providers
-
 import 'screens/login_screen.dart';
 
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
-  // // Initialize Hive local storage
-  // await Hive.initFlutter();
-  
-  // // Open a box to store your inventory items
-  // await Hive.openBox('inventoryBox');
-
   await Firebase.initializeApp(); // Initialize Firebase
   
   runApp(
+    //This is where we set up our providers for state management
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
@@ -31,6 +21,7 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (_) => OrderProvider()),
         // ... other providers
       ],
+      // The root of the application
       child: const PosApp(),
     ),
   );
@@ -42,10 +33,10 @@ class PosApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'POS System',
+      title: 'Point Of Sale System',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       home: const LoginScreen(),          // ← start here
