@@ -463,7 +463,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: const Column(
                       children: [
                         Text(
-                          'Demo accounts (create in Firebase)',
+                          '',
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         SizedBox(height: 6),
