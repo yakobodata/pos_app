@@ -430,7 +430,7 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                   final item = current.items[i];
                   return ListTile(
                     title: Text(item.name),
-                    subtitle: Text('\$${item.unitPrice.toStringAsFixed(2)} × ${item.quantity}'),
+                    subtitle: Text('\UGX ${item.unitPrice.toStringAsFixed(2)} × ${item.quantity}'),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -482,7 +482,7 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                               );
                             }
                           : null,
-                      child: Text('${m.name}\n\$${m.price}'),
+                      child: Text('${m.name}\n\UGX${m.price}'),
                     ),
                   );
                 },
@@ -494,10 +494,10 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                 padding: const EdgeInsets.all(16),
                 child: Column(
                   children: [
-                    Text('Subtotal: \$${current.subtotal.toStringAsFixed(2)}'),
-                    Text('Tax: \$${current.tax.toStringAsFixed(2)}'),
-                    Text('Tip: \$${current.tipAmount.toStringAsFixed(2)}'),
-                    Text('Total: \$${current.total.toStringAsFixed(2)}',
+                    Text('Subtotal: \UGX ${current.subtotal.toStringAsFixed(2)}'),
+                    // Text('Tax: \UGX ${current.tax.toStringAsFixed(2)}'),
+                    // Text('Tip: \UGX ${current.tipAmount.toStringAsFixed(2)}'),
+                    Text('Total: \UGX ${current.total.toStringAsFixed(2)}',
                         style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                     const SizedBox(height: 12),
                     Row(

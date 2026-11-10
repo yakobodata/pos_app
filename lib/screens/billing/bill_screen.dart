@@ -49,7 +49,7 @@ class _BillScreenState extends State<BillScreen> {
           children: [
             const Icon(Icons.check_circle, color: Colors.green, size: 60),
             const SizedBox(height: 16),
-            Text('Total Paid: \$${order.total.toStringAsFixed(2)}'),
+            Text('Total Paid: \UGX ${order.total.toStringAsFixed(2)}'),
             Text('Method: $_selectedPaymentMethod'),
           ],
         ),

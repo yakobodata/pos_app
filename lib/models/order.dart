@@ -61,7 +61,7 @@ class Order {
     this.status = OrderStatus.pending,
     DateTime? createdAt,
     this.createdByUserId,
-    this.taxRate = 0.10,
+    this.taxRate = 0.0,
     this.tipAmount = 0.0,
   })  : id = id ?? const Uuid().v4(),
         items = items ?? [],
@@ -70,7 +70,7 @@ class Order {
   double get subtotal =>
       items.fold(0.0, (sum, item) => sum + item.total);
 
-  double get tax => subtotal * taxRate;
+  double get tax => subtotal;
 
-  double get total => subtotal + tax + tipAmount;
+  double get total => subtotal;
 }

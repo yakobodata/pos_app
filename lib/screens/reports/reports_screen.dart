@@ -13,7 +13,7 @@ class ReportsScreen extends StatelessWidget {
     final orderProvider = context.watch<OrderProvider>();
     final allOrders = orderProvider.orders;
     final paidOrders = allOrders.where((o) => o.status == OrderStatus.paid).toList();
-    final currency = NumberFormat.currency(symbol: '\$');
+    final currency = NumberFormat.currency(symbol: '\UGX');
 
     // ===== Analytics Calculations =====
     double totalRevenue = 0;
@@ -143,7 +143,7 @@ class ReportsScreen extends StatelessWidget {
                   _infoRow(
                     'Average Order Value',
                     paidOrders.isEmpty
-                        ? '\$0.00'
+                        ? '\UGX 0.00'
                         : currency.format(totalRevenue / paidOrders.length),
                   ),
                 ],
@@ -267,7 +267,7 @@ class ReportsScreen extends StatelessWidget {
   }
 
   void _showOrderDetails(BuildContext context, Order order) {
-    final currency = NumberFormat.currency(symbol: '\$');
+    final currency = NumberFormat.currency(symbol: '\UGX');
 
     showModalBottomSheet(
       context: context,
